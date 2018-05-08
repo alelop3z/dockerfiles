@@ -1,0 +1,19 @@
+version: '3'
+
+volumes:
+  standalone_data:
+
+services:
+  mongodb24:
+    container_name: mongodb364
+    hostname: mongodb364
+    image: mongo:3.6.4
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - standalone_data:/data/db
+      - /data/db:/data/db
+      - /Users/alejandrolopez/Proyectos/dockers/share:/mnt/share
+    ports:
+        - 27017:27017
