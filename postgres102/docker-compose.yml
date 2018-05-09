@@ -12,7 +12,7 @@ services:
       - "5432:5432"
     volumes:
       - standalone_data:/var/lib/postgresql/data
-      - /Users/iquesada/docker/share:/mnt/share
+      - /Users/alejandro/Proyectos/share:/mnt/share
     environment:
       POSTGRES_PASSWORD: dellanera
   adminer:

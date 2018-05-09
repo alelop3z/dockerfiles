@@ -12,6 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - standalone_data:/var/lib/mysql
+      - /Users/alejandro/Proyectos/share:/mnt/share
     environment:
       MYSQL_ROOT_PASSWORD: dellanera
   adminer:
