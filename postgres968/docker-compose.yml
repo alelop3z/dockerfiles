@@ -1,0 +1,22 @@
+version: '3'
+
+volumes:
+  standalone_data:
+
+services:
+  postgres968:
+    container_name: postgres968
+    hostname: postgres968
+    image: postgres:9.6.8
+    ports:
+      - "5432:5432"
+    volumes:
+      - standalone_data:/var/lib/postgresql/data
+      - /Users/alejandro/Proyectos/share:/mnt/share
+    environment:
+      POSTGRES_PASSWORD: dellanera
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
