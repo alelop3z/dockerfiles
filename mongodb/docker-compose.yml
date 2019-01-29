@@ -5,14 +5,15 @@ volumes:
 
 services:
   mongodb24:
-    container_name: mongodb24
-    hostname: mongodb24
-    image: mongo:2.4
+    container_name: mongodb
+    hostname: mongodb
+    image: mongo:latest
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - standalone_data:/data/db
-      - /Users/iquesada/antuna:/root/antuna
+      - /data/db:/data/db
+      - /Users/alejandrolopez/Proyectos/dockers/share:/mnt/share
     ports:
         - 27017:27017
