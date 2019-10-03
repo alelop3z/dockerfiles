@@ -1,0 +1,14 @@
+version: '3'
+
+volumes:
+  standalone_data:
+
+services:
+  redis:
+    container_name: redis
+    hostname: redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - standalone_data:/var/lib/redis/data

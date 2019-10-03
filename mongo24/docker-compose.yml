@@ -4,10 +4,10 @@ volumes:
   standalone_data:
 
 services:
-  mongodb:
-    container_name: mongodb
-    hostname: mongodb
-    image: mongo:latest
+  mongo24:
+    container_name: mongo24
+    hostname: mongo24
+    image: mongo:2.4
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
