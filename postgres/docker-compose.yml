@@ -9,7 +9,7 @@ services:
     hostname: postgres
     image: postgres:latest
     ports:
-      - "5432:5432"
+      - 5432:5432
     volumes:
       - standalone_data:/var/lib/postgresql/data
       - /Users/alejandrolopez/share/postgresql:/mnt/share
@@ -20,4 +20,4 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
+      - 8081:8080

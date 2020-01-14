@@ -1,18 +1,34 @@
-version: '3'
+# version: '3'
+#
+# volumes:
+#   data:
+#
+# services:
+#
+#   portainer:
+#     image: portainer/portainer
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock
+#       - data:/data
+#     ports:
+#       - 9000:9000
+#     deploy:
+#       placement:
+#         constraints: [node.role == manager]
+#
+#
 
-volumes:
-  data:
+version: '2'
 
 services:
-
   portainer:
     image: portainer/portainer
+    ports:
+      - 9001:9000
+    command: -H unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - data:/data
-    ports:
-      - 9000:9000
-    deploy:
-      placement:
-        constraints: [node.role == manager]
+      - portainer_data:/data
 
+volumes:
+  portainer_data:

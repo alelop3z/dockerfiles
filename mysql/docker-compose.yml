@@ -10,9 +10,9 @@ services:
     hostname: mysql
     image: mysql:latest
     ports:
-      - "3307:3306"
+      - 3306:3306
     volumes:
-      - standalone_data:/var/lib/mysql
+      - standalone_data:/var/lib/mysql/data
       - /Users/alejandrolopez/share/mysql:/mnt/share
     environment:
       MYSQL_ROOT_PASSWORD: dellanera
