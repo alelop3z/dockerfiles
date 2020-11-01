@@ -4,15 +4,15 @@ volumes:
   standalone_data:
 
 services:
-  postgres968:
-    container_name: postgres968
-    hostname: postgres968
-    image: postgres:9.6.17
+  postgres94:
+    container_name: postgres94
+    hostname: postgres94
+    image: postgres:9.4
     ports:
       - "5432:5432"
     volumes:
       - standalone_data:/var/lib/postgresql/data
-      - /Users/alejandrolopez/Proyectos/share:/mnt/share
+      - /Users/alejandrolopez/share/postgresql:/mnt/share
     environment:
       POSTGRES_PASSWORD: dellanera
   adminer:
